@@ -1,0 +1,9 @@
+{
+  "title": "Dotted Glow Background",
+  "description": "A high-performance Canvas-based particle background featuring pulsing, glowing dots in a staggered grid.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

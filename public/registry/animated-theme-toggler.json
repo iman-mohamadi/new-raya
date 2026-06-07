@@ -1,0 +1,28 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "animated-theme-toggler",
+  "type": "registry:component",
+  "title": "Animated Theme Toggler",
+  "description": "A light/dark mode switch that leverages the View Transitions API to create a cinematic, full-screen expanding circle effect.",
+  "dependencies": [
+    "lucide-vue-next",
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "AnimatedThemeToggler.vue",
+      "content": "<script setup lang=\"ts\">\r\nimport { ref, nextTick, onMounted } from 'vue'\r\nimport { useDark, useToggle } from '@vueuse/core'\r\nimport { Moon, Sun } from 'lucide-vue-next'\r\nimport { cn } from '@/lib/utils'\r\n\r\ninterface Props {\r\n  duration?: number\r\n  class?: string\r\n}\r\n\r\nconst props = withDefaults(defineProps<Props>(), {\r\n  duration: 400,\r\n  class: ''\r\n})\r\n\r\nconst emit = defineEmits(['toggle'])\r\n\r\n// Use VueUse to handle actual DOM class injection and localStorage seamlessly\r\nconst isDark = useDark()\r\nconst toggleDark = useToggle(isDark)\r\n\r\nconst mounted = ref(false)\r\nconst buttonRef = ref<HTMLButtonElement | null>(null)\r\n\r\nonMounted(() => {\r\n  mounted.value = true\r\n})\r\n\r\nconst toggleTheme = async (event: MouseEvent) => {\r\n  // Graceful fallback for unsupported browsers or users who prefer reduced motion\r\n  const isAppearanceTransition = \r\n    // @ts-ignore - View Transitions API might not be fully typed in all environments\r\n    document.startViewTransition && \r\n    !window.matchMedia('(prefers-reduced-motion: reduce)').matches\r\n\r\n  if (!isAppearanceTransition) {\r\n    toggleDark()\r\n    emit('toggle', isDark.value)\r\n    return\r\n  }\r\n\r\n  const button = buttonRef.value\r\n  if (!button) return\r\n\r\n  // Calculate button center for the expanding circle origin\r\n  const { top, left, width, height } = button.getBoundingClientRect()\r\n  const x = left + width / 2\r\n  const y = top + height / 2\r\n  \r\n  // Calculate the maximum radius needed to cover the entire screen\r\n  const right = window.innerWidth - left\r\n  const bottom = window.innerHeight - top\r\n  const maxRadius = Math.hypot(\r\n    Math.max(left, right),\r\n    Math.max(top, bottom)\r\n  )\r\n\r\n  // @ts-ignore\r\n  const transition = document.startViewTransition(async () => {\r\n    toggleDark()\r\n    emit('toggle', isDark.value)\r\n    await nextTick()\r\n  })\r\n\r\n  await transition.ready\r\n\r\n  document.documentElement.animate(\r\n    {\r\n      clipPath: [\r\n        `circle(0px at ${x}px ${y}px)`,\r\n        `circle(${maxRadius}px at ${x}px ${y}px)`,\r\n      ],\r\n    },\r\n    {\r\n      duration: props.duration,\r\n      easing: \"ease-in-out\",\r\n      pseudoElement: \"::view-transition-new(root)\",\r\n    }\r\n  )\r\n}\r\n</script>\r\n\r\n<template>\r\n  <button\r\n    ref=\"buttonRef\"\r\n    type=\"button\"\r\n    @click=\"toggleTheme\"\r\n    :class=\"cn(\r\n      'relative inline-flex items-center justify-center rounded-md p-2 transition-colors',\r\n      'hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',\r\n      props.class\r\n    )\"\r\n  >\r\n    <template v-if=\"mounted\">\r\n      <Sun v-if=\"isDark\" class=\"h-5 w-5\" />\r\n      <Moon v-else class=\"h-5 w-5\" />\r\n    </template>\r\n\r\n    <div v-else class=\"h-5 w-5\" />\r\n\r\n    <span class=\"sr-only\">Toggle theme</span>\r\n  </button>\r\n</template>\r\n\r\n<style>\r\n/* Required View Transition pseudo-elements. \r\n  By removing the default crossfade animation and locking the z-index, \r\n  we allow the clip-path circle to act as the sole transition mechanic.\r\n*/\r\n::view-transition-old(root),\r\n::view-transition-new(root) {\r\n  animation: none;\r\n  mix-blend-mode: normal;\r\n}\r\n\r\n::view-transition-new(root) {\r\n  z-index: 2147483646;\r\n}\r\n</style>",
+      "type": "registry:component",
+      "target": "components/animated-theme-toggler/AnimatedThemeToggler.vue"
+    },
+    {
+      "path": "index.ts",
+      "content": "export { default as AnimatedThemeToggler } from './AnimatedThemeToggler.vue'",
+      "type": "registry:component",
+      "target": "components/animated-theme-toggler/index.ts"
+    }
+  ]
+}

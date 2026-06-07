@@ -1,0 +1,10 @@
+{
+  "title": "Floating Dock",
+  "description": "An interactive, macOS-style animated navigation dock with dynamic magnification and mobile support.",
+  "dependencies": [
+    "lucide-vue-next",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

@@ -1,12 +1,24 @@
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
+import pkg from './package.json'
 
 export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
   compatibilityDate: '2025-01-01',
-  vite: {
-    plugins: [tailwindcss()],
+
+  runtimeConfig: {
+    public: {
+      version: pkg.version
+    }
   },
-  modules: ['shadcn-nuxt'],
+
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
+
+  modules: ['shadcn-nuxt', "@vueuse/nuxt", '@nuxtjs/sitemap', '@nuxt/image', 'motion-v/nuxt', '@pinia/nuxt', '@tresjs/nuxt'],
+
   app: {
     head: {
       titleTemplate: '%s - Raya UI',
@@ -32,18 +44,14 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
+
+  site: {
+    url: 'https://raya-ui.com',
+    name: 'Raya UI',
+  },
+
   shadcn: {
-    /**
-     * Prefix for all the imported component.
-     * @default "Ui"
-     */
     prefix: 'Ui',
-    /**
-     * Directory that the component lives in.
-     * Will respect the Nuxt aliases.
-     * @link https://nuxt.com/docs/api/nuxt-config#alias
-     * @default "@/components/ui"
-     */
     componentDir: '@/components/ui',
   },
 })

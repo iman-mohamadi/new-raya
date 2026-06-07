@@ -1,0 +1,10 @@
+{
+  "title": "Animated Tabs",
+  "description": "Accessible tabs with a smooth, cinematic sliding indicator using Reka UI.",
+  "dependencies": [
+    "reka-ui",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

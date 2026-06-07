@@ -1,0 +1,27 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "animated-input",
+  "type": "registry:component",
+  "title": "Animated Input",
+  "description": "An input field featuring a magnetic, cursor-tracking hover glow on its border.",
+  "dependencies": [
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "AnimatedInput.vue",
+      "content": "<script setup lang=\"ts\">\r\nimport { ref, computed, type HTMLAttributes } from 'vue'\r\nimport { useVModel } from '@vueuse/core'\r\nimport { cn } from '@/lib/utils'\r\n\r\ndefineOptions({\r\n  inheritAttrs: false,\r\n})\r\n\r\nconst props = withDefaults(defineProps<{\r\n  defaultValue?: string | number\r\n  modelValue?: string | number\r\n  class?: HTMLAttributes['class']\r\n  containerClass?: HTMLAttributes['class']\r\n  /**\r\n   * Glow color following the cursor\r\n   * @default \"var(--primary)\"\r\n   */\r\n  glowColor?: string\r\n}>(), {\r\n  glowColor: 'var(--primary)' // Natively taps into your oklch theme color\r\n})\r\n\r\nconst emits = defineEmits<{\r\n  (e: 'update:modelValue', payload: string | number): void\r\n}>()\r\n\r\nconst modelValue = useVModel(props, 'modelValue', emits, {\r\n  passive: true,\r\n  defaultValue: props.defaultValue,\r\n})\r\n\r\nconst inputContainerRef = ref<HTMLDivElement | null>(null)\r\nconst mouse = ref({ x: 0, y: 0 })\r\nconst visible = ref(false)\r\nconst radius = 100\r\n\r\n// Using backgroundImage allows the gradient to sit on top of the container's background color\r\nconst containerBg = computed(() => {\r\n  return `radial-gradient(\r\n    ${visible.value ? radius + 'px' : '0px'} circle at ${mouse.value.x}px ${mouse.value.y}px,\r\n    ${props.glowColor},\r\n    transparent 80%\r\n  )`\r\n})\r\n\r\nfunction handleMouseMove({ clientX, clientY }: MouseEvent) {\r\n  if (!inputContainerRef.value) return\r\n  const { left, top } = inputContainerRef.value.getBoundingClientRect()\r\n  mouse.value = { x: clientX - left, y: clientY - top }\r\n}\r\n</script>\r\n\r\n<template>\r\n  <div\r\n      ref=\"inputContainerRef\"\r\n      :class=\"cn(\r\n      'group/input flex rounded-md p-[1px] transition-colors duration-300',\r\n      'bg-input focus-within:bg-ring focus-within:ring-1 focus-within:ring-ring focus-within:ring-offset-0',\r\n      props.containerClass\r\n    )\"\r\n      :style=\"{ backgroundImage: containerBg }\"\r\n      @mouseenter=\"visible = true\"\r\n      @mouseleave=\"visible = false\"\r\n      @mousemove=\"handleMouseMove\"\r\n  >\r\n    <input\r\n        v-bind=\"$attrs\"\r\n        v-model=\"modelValue\"\r\n        :class=\"cn(\r\n        'flex h-10 w-full rounded-[calc(var(--radius)-2px)] bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors',\r\n        'file:border-0 file:bg-transparent file:text-sm file:font-medium',\r\n        'placeholder:text-muted-foreground',\r\n        'focus-visible:outline-none',\r\n        'disabled:cursor-not-allowed disabled:opacity-50',\r\n        props.class\r\n      )\"\r\n    />\r\n  </div>\r\n</template>",
+      "type": "registry:component",
+      "target": "components/animated-input/AnimatedInput.vue"
+    },
+    {
+      "path": "index.ts",
+      "content": "export { default as AnimatedInput } from './AnimatedInput.vue'",
+      "type": "registry:component",
+      "target": "components/animated-input/index.ts"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Bar Visualizer",
+  "description": "An interactive, multiband audio visualizer component capable of responding to real MediaStreams or simulating voice agent states.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

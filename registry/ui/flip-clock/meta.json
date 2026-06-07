@@ -1,0 +1,10 @@
+{
+  "title": "Flip Clock",
+  "description": "A retro-style mechanical flip clock that supports both real-time display and countdowns.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "class-variance-authority"
+  ],
+  "registryDependencies": []
+}

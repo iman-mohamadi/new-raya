@@ -1,0 +1,10 @@
+{
+  "title": "Ambient Grid",
+  "description": "A cinematic ambient background with a mouse-following interactive grid.",
+  "dependencies": [
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

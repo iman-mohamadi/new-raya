@@ -1,0 +1,10 @@
+{
+  "title": "Background Ripple Effect",
+  "description": "An interactive grid background that creates a geometric ripple effect on click.",
+  "dependencies": [
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

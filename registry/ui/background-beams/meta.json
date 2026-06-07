@@ -1,0 +1,9 @@
+{
+  "title": "Background Beams",
+  "description": "An animated background featuring shooting light beams along curved paths.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

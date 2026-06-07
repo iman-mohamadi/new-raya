@@ -1,0 +1,11 @@
+{
+  "title": "Animated Theme Toggler",
+  "description": "A light/dark mode switch that leverages the View Transitions API to create a cinematic, full-screen expanding circle effect.",
+  "dependencies": [
+    "lucide-vue-next",
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

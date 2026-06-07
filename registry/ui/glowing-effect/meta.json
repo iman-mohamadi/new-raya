@@ -1,0 +1,10 @@
+{
+  "title": "Glowing Effect",
+  "description": "An interactive border glow effect that tracks the mouse pointer using conic gradients and CSS masks.",
+  "dependencies": [
+    "motion-v",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

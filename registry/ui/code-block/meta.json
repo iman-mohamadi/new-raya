@@ -1,0 +1,12 @@
+{
+  "title": "Code Block",
+  "description": "A syntax-highlighted code block with a built-in copy to clipboard functionality.",
+  "dependencies": [
+    "highlight.js",
+    "lucide-vue-next",
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

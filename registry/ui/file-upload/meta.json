@@ -1,0 +1,12 @@
+{
+  "title": "File Upload",
+  "description": "A robust, headless-architecture file upload system with drag-and-drop support, validation, and progress tracking.",
+  "dependencies": [
+    "lucide-vue-next",
+    "@vueuse/core",
+    "reka-ui",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

@@ -1,0 +1,309 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry.json",
+  "name": "raya-ui",
+  "homepage": "https://raya-ui.com",
+  "items": [
+    {
+      "name": "ambient-grid",
+      "type": "registry:component",
+      "title": "Ambient Grid",
+      "description": "A cinematic ambient background with a mouse-following interactive grid.",
+      "dependencies": [
+        "@vueuse/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/ambient-grid/AmbientGrid.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/ambient-grid/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "animated-background",
+      "type": "registry:component",
+      "title": "Animated Background",
+      "description": "A layout animation wrapper that creates a smooth sliding background behind active items.",
+      "dependencies": [
+        "motion-v",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/animated-background/AnimatedBackground.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/animated-background/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "animated-input",
+      "type": "registry:component",
+      "title": "Animated Input",
+      "description": "An input field featuring a magnetic, cursor-tracking hover glow on its border.",
+      "dependencies": [
+        "@vueuse/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/animated-input/AnimatedInput.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/animated-input/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "animated-tabs",
+      "type": "registry:component",
+      "title": "Animated Tabs",
+      "description": "Accessible tabs with a smooth, cinematic sliding indicator using Reka UI.",
+      "dependencies": [
+        "reka-ui",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/animated-tabs/AnimatedTabs.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/animated-tabs/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "animated-theme-toggler",
+      "type": "registry:component",
+      "title": "Animated Theme Toggler",
+      "description": "A light/dark mode switch that leverages the View Transitions API to create a cinematic, full-screen expanding circle effect.",
+      "dependencies": [
+        "lucide-vue-next",
+        "@vueuse/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/animated-theme-toggler/AnimatedThemeToggler.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/animated-theme-toggler/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "background-beams",
+      "type": "registry:component",
+      "title": "Background Beams",
+      "description": "An animated background featuring shooting light beams along curved paths.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/background-beams/BackgroundBeams.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/background-beams/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "background-ripple-effect",
+      "type": "registry:component",
+      "title": "Background Ripple Effect",
+      "description": "An interactive grid background that creates a geometric ripple effect on click.",
+      "dependencies": [
+        "@vueuse/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/background-ripple-effect/BackgroundRippleEffect.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/background-ripple-effect/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "bar-visualizer",
+      "type": "registry:component",
+      "title": "Bar Visualizer",
+      "description": "An interactive, multiband audio visualizer component capable of responding to real MediaStreams or simulating voice agent states.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/bar-visualizer/BarVisualizer.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/bar-visualizer/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:component",
+      "title": "Code Block",
+      "description": "A syntax-highlighted code block with a built-in copy to clipboard functionality.",
+      "dependencies": [
+        "highlight.js",
+        "lucide-vue-next",
+        "@vueuse/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/code-block/CodeBlock.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/code-block/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dotted-glow-background",
+      "type": "registry:component",
+      "title": "Dotted Glow Background",
+      "description": "A high-performance Canvas-based particle background featuring pulsing, glowing dots in a staggered grid.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/dotted-glow-background/DottedGlowBackground.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/dotted-glow-background/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "encrypted-text",
+      "type": "registry:component",
+      "title": "Encrypted Text",
+      "description": "A cinematic text effect that scrambles letters as gibberish before sequentially revealing the true string on scroll.",
+      "dependencies": [
+        "@vueuse/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/encrypted-text/EncryptedText.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/encrypted-text/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:component",
+      "title": "File Upload",
+      "description": "A robust, headless-architecture file upload system with drag-and-drop support, validation, and progress tracking.",
+      "dependencies": [
+        "lucide-vue-next",
+        "@vueuse/core",
+        "reka-ui",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/file-upload/FileUpload.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadClear.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadDropzone.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadItem.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadItemDelete.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadItemMetadata.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadItemPreview.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadItemProgress.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadList.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/FileUploadTrigger.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/file-upload/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

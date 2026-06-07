@@ -1,0 +1,10 @@
+{
+  "title": "Animated Input",
+  "description": "An input field featuring a magnetic, cursor-tracking hover glow on its border.",
+  "dependencies": [
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

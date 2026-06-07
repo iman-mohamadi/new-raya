@@ -1,0 +1,10 @@
+{
+  "title": "Animated Background",
+  "description": "A layout animation wrapper that creates a smooth sliding background behind active items.",
+  "dependencies": [
+    "motion-v",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

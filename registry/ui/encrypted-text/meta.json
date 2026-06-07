@@ -1,0 +1,10 @@
+{
+  "title": "Encrypted Text",
+  "description": "A cinematic text effect that scrambles letters as gibberish before sequentially revealing the true string on scroll.",
+  "dependencies": [
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}
