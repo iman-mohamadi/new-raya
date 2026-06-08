@@ -1,0 +1,9 @@
+{
+  "title": "Scrubber",
+  "description": "An interactive, accessible value slider with keyboard support, smooth handle physics, and visual ticks.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

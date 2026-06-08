@@ -1,0 +1,10 @@
+{
+  "title": "Partition Bar",
+  "description": "A compound component that automatically calculates flex-basis proportions to create proportional segments in a unified bar chart.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "class-variance-authority"
+  ],
+  "registryDependencies": []
+}

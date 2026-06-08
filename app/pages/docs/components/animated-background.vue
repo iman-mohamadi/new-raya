@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { AnimatedBackground } from '@/components/ui/animated-background'
+import { AnimatedBackground } from '~ui/animated-background'
 import { Home, PhoneCall, Settings, User } from 'lucide-vue-next'
+import {CodeBlock} from "~ui/code-block";
 
 definePageMeta({ layout: 'docs' })
 
@@ -82,7 +83,7 @@ const TABS = [...] // Home, About, Services, Contact
 </script>
 
 <template>
-  <DocContent>
+  <DocContent filename="AnimatedBackground.vue" breadcrumbGroup="Components">
     <template #breadcrumb-title>
       <span class="text-foreground text-sm font-medium">Animated Background</span>
     </template>

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "marquee",
+  "type": "registry:component",
+  "title": "Marquee",
+  "description": "An infinite scrolling component designed to smoothly loop content horizontally or vertically.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "index.ts",
+      "content": "export { default as Marquee } from './Marquee.vue'",
+      "type": "registry:component",
+      "target": "components/marquee/index.ts"
+    },
+    {
+      "path": "Marquee.vue",
+      "content": "<script setup lang=\"ts\">\r\nimport { cn } from '@/lib/utils'\r\n\r\ninterface Props {\r\n  class?: string\r\n  /** Reverses the animation direction */\r\n  reverse?: boolean\r\n  /** Pauses the animation when the user hovers over the container */\r\n  pauseOnHover?: boolean\r\n  /** Changes the scrolling direction to vertical */\r\n  vertical?: boolean\r\n  /** Number of times to duplicate the slot content to ensure a seamless loop */\r\n  repeat?: number\r\n}\r\n\r\nconst props = withDefaults(defineProps<Props>(), {\r\n  reverse: false,\r\n  pauseOnHover: false,\r\n  vertical: false,\r\n  repeat: 4,\r\n  class: ''\r\n})\r\n</script>\r\n\r\n<template>\r\n  <div\r\n    :class=\"cn(\r\n      'group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] gap-[var(--gap)]',\r\n      {\r\n        'flex-row': !vertical,\r\n        'flex-col': vertical,\r\n      },\r\n      props.class\r\n    )\"\r\n  >\r\n    <div\r\n      v-for=\"i in repeat\"\r\n      :key=\"i\"\r\n      :class=\"cn('flex shrink-0 justify-around gap-[var(--gap)]', {\r\n        'animate-marquee flex-row': !vertical,\r\n        'animate-marquee-vertical flex-col': vertical,\r\n        'group-hover:[animation-play-state:paused]': pauseOnHover,\r\n        '[animation-direction:reverse]': reverse,\r\n      })\"\r\n    >\r\n      <slot />\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<style>\r\n/* Fallback animations just in case they aren't defined in tailwind.config.ts \r\n  These enable the marquee to work immediately without configuration.\r\n*/\r\n@keyframes marquee {\r\n  from { transform: translateX(0); }\r\n  to { transform: translateX(calc(-100% - var(--gap))); }\r\n}\r\n\r\n@keyframes marquee-vertical {\r\n  from { transform: translateY(0); }\r\n  to { transform: translateY(calc(-100% - var(--gap))); }\r\n}\r\n\r\n.animate-marquee {\r\n  animation: marquee var(--duration) linear infinite;\r\n}\r\n\r\n.animate-marquee-vertical {\r\n  animation: marquee-vertical var(--duration) linear infinite;\r\n}\r\n</style>",
+      "type": "registry:component",
+      "target": "components/marquee/Marquee.vue"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Magnetic",
+  "description": "A wrapper component that applies a physics-based magnetic pull to its children when the cursor approaches.",
+  "dependencies": [
+    "motion-v"
+  ],
+  "registryDependencies": []
+}

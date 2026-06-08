@@ -1,5 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 import pkg from './package.json'
+import { resolve } from 'pathe'
 
 export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
@@ -15,6 +16,10 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+  },
+
+  alias: {
+    '~ui': resolve('./registry/ui'),
   },
 
   modules: ['shadcn-nuxt', "@vueuse/nuxt", '@nuxtjs/sitemap', '@nuxt/image', 'motion-v/nuxt', '@pinia/nuxt', '@tresjs/nuxt'],

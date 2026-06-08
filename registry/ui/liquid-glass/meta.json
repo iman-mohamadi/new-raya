@@ -1,0 +1,9 @@
+{
+  "title": "Liquid Glass",
+  "description": "A high-end glassmorphism component that utilizes SVG color matrix displacement for true optical refraction.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

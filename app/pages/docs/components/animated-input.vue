@@ -69,7 +69,7 @@ const value = ref('')
 </script>
 
 <template>
-  <DocContent>
+  <DocContent filename="AnimatedInput.vue" breadcrumbGroup="Components">
     <!-- Breadcrumb Title -->
     <template #breadcrumb-title>
       <span class="text-foreground text-sm font-medium">Animated Input</span>

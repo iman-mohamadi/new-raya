@@ -1,0 +1,9 @@
+{
+  "title": "Pixelated Button",
+  "description": "A highly stylized, 3D retro arcade button featuring ambient particles, dynamic lighting, and scanline effects.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

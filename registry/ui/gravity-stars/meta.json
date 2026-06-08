@@ -1,0 +1,9 @@
+{
+  "title": "Gravity Stars",
+  "description": "An interactive, physics-based particle system where stars react to cursor gravity and bounce off one another.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

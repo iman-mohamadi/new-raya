@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { AnimatedThemeToggler } from '../../registry/ui/animated-theme-toggler'
 const colorMode = useColorMode()
 
 const toggleDark = (isDark: boolean) => {

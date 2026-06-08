@@ -1,0 +1,9 @@
+{
+  "title": "Marquee",
+  "description": "An infinite scrolling component designed to smoothly loop content horizontally or vertically.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

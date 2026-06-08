@@ -1,0 +1,9 @@
+{
+  "title": "Morphing Text",
+  "description": "A cinematic typography component that uses SVG gooey filters to smoothly morph between an array of strings.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

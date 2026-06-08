@@ -1,0 +1,10 @@
+{
+  "title": "Scroll Reveal",
+  "description": "A typography component that smoothly reveals words based on the scroll progress of the viewport.",
+  "dependencies": [
+    "@vueuse/core",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

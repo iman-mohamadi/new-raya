@@ -1,0 +1,9 @@
+{
+  "title": "Snow Effect",
+  "description": "A high-performance HTML5 Canvas particle system that simulates falling snow with wind drift and dynamic opacity.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

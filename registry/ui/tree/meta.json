@@ -1,0 +1,11 @@
+{
+  "title": "Tree",
+  "description": "A headless, deeply nestable tree component supporting keyboard navigation, selection, and custom icons.",
+  "dependencies": [
+    "reka-ui",
+    "lucide-vue-next",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

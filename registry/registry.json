@@ -304,6 +304,440 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "flip-clock",
+      "type": "registry:component",
+      "title": "Flip Clock",
+      "description": "A retro-style mechanical flip clock that supports both real-time display and countdowns.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/flip-clock/FlipClock.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/flip-clock/FlipUnit.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/flip-clock/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "floating-dock",
+      "type": "registry:component",
+      "title": "Floating Dock",
+      "description": "An interactive, macOS-style animated navigation dock with dynamic magnification and mobile support.",
+      "dependencies": [
+        "lucide-vue-next",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/floating-dock/FloatingDock.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/floating-dock/FloatingDockDesktop.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/floating-dock/FloatingDockIcon.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/floating-dock/FloatingDockMobile.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/floating-dock/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "glowing-effect",
+      "type": "registry:component",
+      "title": "Glowing Effect",
+      "description": "An interactive border glow effect that tracks the mouse pointer using conic gradients and CSS masks.",
+      "dependencies": [
+        "motion-v",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/glowing-effect/GlowingEffect.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/glowing-effect/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "gravity-stars",
+      "type": "registry:component",
+      "title": "Gravity Stars",
+      "description": "An interactive, physics-based particle system where stars react to cursor gravity and bounce off one another.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/gravity-stars/GravityStars.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/gravity-stars/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "liquid-glass",
+      "type": "registry:component",
+      "title": "Liquid Glass",
+      "description": "A high-end glassmorphism component that utilizes SVG color matrix displacement for true optical refraction.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/liquid-glass/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/liquid-glass/LiquidGlass.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "magnetic",
+      "type": "registry:component",
+      "title": "Magnetic",
+      "description": "A wrapper component that applies a physics-based magnetic pull to its children when the cursor approaches.",
+      "dependencies": [
+        "motion-v"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/magnetic/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/magnetic/Magnetic.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "marquee",
+      "type": "registry:component",
+      "title": "Marquee",
+      "description": "An infinite scrolling component designed to smoothly loop content horizontally or vertically.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/marquee/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/marquee/Marquee.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "morphing-text",
+      "type": "registry:component",
+      "title": "Morphing Text",
+      "description": "A cinematic typography component that uses SVG gooey filters to smoothly morph between an array of strings.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/morphing-text/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/morphing-text/MorphingText.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "partition-bar",
+      "type": "registry:component",
+      "title": "Partition Bar",
+      "description": "A compound component that automatically calculates flex-basis proportions to create proportional segments in a unified bar chart.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/partition-bar/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/partition-bar/PartitionBar.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/partition-bar/PartitionBarSegment.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/partition-bar/PartitionBarSegmentTitle.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/partition-bar/PartitionBarSegmentValue.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pixelated-button",
+      "type": "registry:component",
+      "title": "Pixelated Button",
+      "description": "A highly stylized, 3D retro arcade button featuring ambient particles, dynamic lighting, and scanline effects.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/pixelated-button/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/pixelated-button/PixelatedButton.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "raya-button",
+      "type": "registry:component",
+      "title": "Raya Button",
+      "description": "The foundational interactive element of Raya UI, featuring comprehensive color matrix variants, loading states, and Reka UI primitive rendering.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "class-variance-authority",
+        "lucide-vue-next",
+        "reka-ui"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/raya-button/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/raya-button/RayaButton.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/raya-button/variants.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scroll-reveal",
+      "type": "registry:component",
+      "title": "Scroll Reveal",
+      "description": "A typography component that smoothly reveals words based on the scroll progress of the viewport.",
+      "dependencies": [
+        "@vueuse/core",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/scroll-reveal/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scroll-reveal/ScrollReveal.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scroll-reveal/ScrollWord.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scroll-spy",
+      "type": "registry:component",
+      "title": "Scroll Spy",
+      "description": "A scroll-spy navigation component system that tracks intersecting elements and highlights the active section dynamically.",
+      "dependencies": [
+        "@vueuse/core",
+        "reka-ui",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/scroll-spy/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scroll-spy/ScrollSpy.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scroll-spy/ScrollSpyLink.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scroll-spy/ScrollSpyNav.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scroll-spy/ScrollSpySection.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scroll-spy/ScrollSpyViewport.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scrubber",
+      "type": "registry:component",
+      "title": "Scrubber",
+      "description": "An interactive, accessible value slider with keyboard support, smooth handle physics, and visual ticks.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/scrubber/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/scrubber/Scrubber.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "snow-effect",
+      "type": "registry:component",
+      "title": "Snow Effect",
+      "description": "A high-performance HTML5 Canvas particle system that simulates falling snow with wind drift and dynamic opacity.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/snow-effect/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/snow-effect/SnowEffect.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "Spinner",
+      "description": "A custom cinematic spinner component.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/spinner/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/spinner/Spinner.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:component",
+      "title": "Tree",
+      "description": "A custom cinematic tree component.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/tree/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/tree/Tree.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "wheel-picker",
+      "type": "registry:component",
+      "title": "Wheel Picker",
+      "description": "A custom cinematic wheel-picker component.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/wheel-picker/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/wheel-picker/WheelPicker.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/ui/wheel-picker/WheelPickerWrapper.vue",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

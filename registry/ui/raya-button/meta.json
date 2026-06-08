@@ -1,0 +1,12 @@
+{
+  "title": "Raya Button",
+  "description": "The foundational interactive element of Raya UI, featuring comprehensive color matrix variants, loading states, and Reka UI primitive rendering.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "class-variance-authority",
+    "lucide-vue-next",
+    "reka-ui"
+  ],
+  "registryDependencies": []
+}

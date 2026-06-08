@@ -1,0 +1,11 @@
+{
+  "title": "Scroll Spy",
+  "description": "A scroll-spy navigation component system that tracks intersecting elements and highlights the active section dynamically.",
+  "dependencies": [
+    "@vueuse/core",
+    "reka-ui",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}
