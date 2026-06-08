@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { RayaButton } from '~ui/raya-button'
 
 definePageMeta({ layout: 'docs' })
 

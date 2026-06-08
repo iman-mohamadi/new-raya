@@ -6,8 +6,8 @@ import {
   ScrollSpyLink,
   ScrollSpyViewport,
   ScrollSpySection
-} from '@/components/ui/scroll-spy'
-import { CodeBlock } from '@/components/ui/code-block'
+} from '~ui/scroll-spy'
+import { CodeBlock } from '~ui/code-block'
 
 definePageMeta({ layout: 'docs' })
 

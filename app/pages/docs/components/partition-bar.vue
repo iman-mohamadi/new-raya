@@ -5,8 +5,8 @@ import {
   PartitionBarSegment,
   PartitionBarSegmentTitle,
   PartitionBarSegmentValue
-} from '@/components/ui/partition-bar'
-import { CodeBlock } from '@/components/ui/code-block'
+} from '~ui/partition-bar'
+import { CodeBlock } from '~ui/code-block'
 
 definePageMeta({ layout: 'docs' })
 

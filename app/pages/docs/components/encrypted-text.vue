@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { EncryptedText } from '~ui/encrypted-text'
 
 definePageMeta({ layout: 'docs' })
 

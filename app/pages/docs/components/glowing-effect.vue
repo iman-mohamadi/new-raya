@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { Box, Lock, Search, Settings, Sparkles } from 'lucide-vue-next'
-import { GlowingEffect } from '@/components/ui/glowing-effect'
-import { CodeBlock } from '@/components/ui/code-block'
+import { GlowingEffect } from '~ui/glowing-effect'
+import { CodeBlock } from '~ui/code-block'
 
 definePageMeta({ layout: 'docs' })
 

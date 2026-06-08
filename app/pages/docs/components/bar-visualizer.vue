@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { BarVisualizer } from '~ui/bar-visualizer'
 
 definePageMeta({ layout: 'docs' })
 

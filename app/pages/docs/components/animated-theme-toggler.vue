@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { AnimatedThemeToggler } from '~ui/animated-theme-toggler'
 
 definePageMeta({ layout: 'docs' })
 

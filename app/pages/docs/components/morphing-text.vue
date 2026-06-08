@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { MorphingText } from '@/components/ui/morphing-text'
-import { CodeBlock } from '@/components/ui/code-block'
+import { MorphingText } from '~ui/morphing-text'
+import { CodeBlock } from '~ui/code-block'
 
 definePageMeta({ layout: 'docs' })
 

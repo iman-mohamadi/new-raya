@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Magnetic } from '@/components/ui/magnetic'
-import { CodeBlock } from '@/components/ui/code-block'
+import { Magnetic } from '~ui/magnetic'
+import { CodeBlock } from '~ui/code-block'
 import { Button } from '@/components/ui/button'
 import { Plus, Github, Twitter, Instagram } from 'lucide-vue-next'
 

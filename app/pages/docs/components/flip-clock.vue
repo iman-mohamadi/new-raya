@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { FlipClock } from '~ui/flip-clock'
 
 definePageMeta({ layout: 'docs' })
 
@@ -75,7 +76,7 @@ const codeString = computed(() => {
       : ''
 
   return `<script setup lang="ts">
-import { FlipClock } from '@/components/ui/flip-clock'${setupCode}
+import { FlipClock } from '@/components/ui/flip-clock'
 <\/script>
 
 <template>

@@ -4,6 +4,7 @@ import {
   Home, Terminal, CircleUser, Settings,
   LayoutGrid, FolderGit2, Ghost
 } from 'lucide-vue-next'
+import { FloatingDock } from '~ui/floating-dock'
 
 definePageMeta({ layout: 'docs' })
 

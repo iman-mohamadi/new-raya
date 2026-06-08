@@ -703,8 +703,13 @@
       "name": "tree",
       "type": "registry:component",
       "title": "Tree",
-      "description": "A custom cinematic tree component.",
-      "dependencies": [],
+      "description": "A headless, deeply nestable tree component supporting keyboard navigation, selection, and custom icons.",
+      "dependencies": [
+        "reka-ui",
+        "lucide-vue-next",
+        "clsx",
+        "tailwind-merge"
+      ],
       "registryDependencies": [],
       "files": [
         {
@@ -721,8 +726,11 @@
       "name": "wheel-picker",
       "type": "registry:component",
       "title": "Wheel Picker",
-      "description": "A custom cinematic wheel-picker component.",
-      "dependencies": [],
+      "description": "An iOS-style 3D scrolling wheel picker featuring native momentum scrolling, gesture support, and infinite looping.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "registryDependencies": [],
       "files": [
         {

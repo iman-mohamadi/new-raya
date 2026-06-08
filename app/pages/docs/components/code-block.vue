@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { CodeBlock } from '~ui/code-block'
+import { AnimatedTabs } from '~ui/animated-tabs'
 
 definePageMeta({ layout: 'docs' })
 
