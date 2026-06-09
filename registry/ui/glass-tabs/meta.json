@@ -1,0 +1,11 @@
+{
+  "title": "Glass Tabs",
+  "description": "An iOS-style floating tab bar with spring physics, animated active states, and heavy glassmorphism.",
+  "dependencies": [
+    "motion-v",
+    "lucide-vue-next",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": []
+}

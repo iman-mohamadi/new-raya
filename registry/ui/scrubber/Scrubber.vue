@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { cn } from '@/lib/utils'
 
 interface Props {
+  className?: string
   class?: string
   decimals?: number
   defaultValue?: number
@@ -43,20 +44,24 @@ const percentage = computed(() => range.value > 0 ? ((value.value - props.min) /
 const isActive = computed(() => isDragging.value || (isHoverDevice.value && isHovering.value))
 
 let mq: MediaQueryList | null = null
+
 const updateHoverDevice = (e: MediaQueryListEvent | MediaQueryList) => {
   isHoverDevice.value = e.matches
 }
 
 onMounted(() => {
+  // Safe SSR guard for Nuxt
   if (typeof window !== 'undefined') {
     mq = window.matchMedia("(hover: hover) and (pointer: fine)")
-    updateHoverDevice(mq)
+    isHoverDevice.value = mq.matches
     mq.addEventListener("change", updateHoverDevice)
   }
 })
 
 onUnmounted(() => {
-  if (mq) mq.removeEventListener("change", updateHoverDevice)
+  if (mq) {
+    mq.removeEventListener("change", updateHoverDevice)
+  }
 })
 
 const clamp = (val: number, min: number, max: number) => Math.min(Math.max(val, min), max)
@@ -65,10 +70,8 @@ const roundToStep = (val: number, step: number, min: number) => Math.round((val 
 const setValue = (newValue: number) => {
   const clamped = clamp(roundToStep(newValue, props.step, props.min), props.min, props.max)
   if (props.modelValue === undefined) internalValue.value = clamped
-  if (clamped !== value.value) {
-    emit('update:modelValue', clamped)
-    emit('change', clamped)
-  }
+  emit('update:modelValue', clamped)
+  emit('change', clamped)
 }
 
 const getValueFromPointer = (clientX: number) => {
@@ -103,6 +106,7 @@ const handlePointerUp = (e: PointerEvent) => {
   }
 }
 
+// Added Accessibility Keyboard Controls
 const handleKeyDown = (e: KeyboardEvent) => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
     e.preventDefault()
@@ -121,7 +125,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
 </script>
 
 <template>
-  <div :class="cn('relative w-full select-none', props.class)">
+  <div :class="cn('relative w-full select-none', props.className, props.class)">
     <div
         ref="trackRef"
         role="slider"
@@ -130,10 +134,8 @@ const handleKeyDown = (e: KeyboardEvent) => {
         :aria-valuemax="max"
         :aria-valuemin="min"
         :aria-valuenow="Number(value.toFixed(decimals))"
-        :class="cn(
-        'relative cursor-pointer overflow-hidden rounded-xl bg-muted outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-        'h-[52px] touch-none'
-      )"
+        class="relative cursor-pointer overflow-hidden bg-muted outline-offset-2"
+        :style="{ height: '52px', borderRadius: '12px', touchAction: 'none' }"
         @mouseenter="isHovering = true"
         @mouseleave="isHovering = false"
         @pointerdown="handlePointerDown"
@@ -142,42 +144,70 @@ const handleKeyDown = (e: KeyboardEvent) => {
         @pointercancel="handlePointerUp"
         @keydown="handleKeyDown"
     >
-      <!-- Fill Track -->
       <div
-          class="pointer-events-none absolute inset-y-0 left-0 rounded-xl bg-primary/20"
-          :class="!isDragging && 'transition-[width] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]'"
-          :style="{ width: `${percentage}%` }"
+          class="pointer-events-none absolute inset-y-0 left-0 bg-foreground/[0.14]"
+          :style="{
+          borderRadius: '12px',
+          width: `${percentage}%`,
+          transition: isDragging ? 'none' : 'width 150ms cubic-bezier(0.23, 1, 0.32, 1)'
+        }"
       />
 
-      <!-- Ticks -->
       <div v-if="ticks > 0" class="pointer-events-none absolute inset-0">
         <div
             v-for="i in ticks"
             :key="i"
-            class="absolute top-1/2 h-2 w-px -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/20"
-            :style="{ left: `${(i / (ticks + 1)) * 100}%` }"
+            class="absolute top-1/2 bg-foreground/[0.25]"
+            :style="{
+            left: `${((i) / (ticks + 1)) * 100}%`,
+            width: '1px',
+            height: '8px',
+            borderRadius: '999px',
+            transform: 'translateX(-50%) translateY(-50%)'
+          }"
         />
       </div>
 
-      <!-- Handle -->
       <div
-          class="pointer-events-none absolute top-1/2 z-10 -ml-1.5 -translate-x-1/2 -translate-y-1/2"
-          :class="!isDragging && 'transition-[left] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]'"
-          :style="{ left: `${percentage}%` }"
+          class="pointer-events-none absolute"
+          :style="{
+          top: '50%',
+          left: `${percentage}%`,
+          transform: 'translateX(-50%) translateY(-50%)',
+          marginLeft: '-6px',
+          zIndex: 3,
+          transition: isDragging ? 'none' : 'left 150ms cubic-bezier(0.23, 1, 0.32, 1)'
+        }"
       >
         <div
-            class="h-[34px] w-[5px] rounded-full bg-foreground transition-all duration-300 ease-out"
-            :class="isActive ? 'scale-100 opacity-80' : 'scale-75 opacity-20'"
+            class="bg-foreground/[0.90] transition-all duration-[250ms] ease-out"
+            :style="{
+            width: '5px',
+            height: '34px',
+            borderRadius: '999px',
+            opacity: isActive ? 0.8 : 0.15,
+            transform: `scale(${isActive ? 1 : 0.7})`
+          }"
         />
       </div>
 
-      <!-- Label -->
-      <div class="pointer-events-none absolute left-4 top-1/2 z-20 -translate-y-1/2 whitespace-nowrap text-[17px] font-medium text-foreground">
+      <div
+          class="pointer-events-none absolute top-1/2 left-[18px] -translate-y-1/2 whitespace-nowrap text-foreground font-medium"
+          :style="{ fontSize: '17px', zIndex: 4 }"
+      >
         {{ label }}
       </div>
 
-      <!-- Value -->
-      <div class="pointer-events-none absolute right-4 top-1/2 z-20 -translate-y-1/2 font-mono text-[15px] font-medium tabular-nums text-foreground">
+      <div
+          class="pointer-events-none absolute top-1/2 right-[14px] -translate-y-1/2 text-foreground"
+          :style="{
+          zIndex: 4,
+          fontFamily: 'ui-monospace, monospace',
+          fontVariantNumeric: 'tabular-nums',
+          fontSize: '15px',
+          fontWeight: 500
+        }"
+      >
         {{ value.toFixed(decimals) }}
       </div>
     </div>
